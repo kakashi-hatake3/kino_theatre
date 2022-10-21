@@ -4,4 +4,5 @@ from subsidiary.views import *
 
 urlpatterns = [
     path('', index),
+    path('subs_1/', subs_1),
 ]
