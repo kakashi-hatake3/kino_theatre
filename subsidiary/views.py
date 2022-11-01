@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Subsidiaryies
 
 
 def index(request):
-    return HttpResponse('Кинотеатры(филиалы) по городу')
+    cinemas = Subsidiaryies.objects.order_by('-pk')
+    return render(request, 'subsidiary/index.html', {'subs': cinemas, 'title': 'Список кинотеатров'})
 
 
 def subs_1(request):
