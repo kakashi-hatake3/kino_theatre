@@ -7,3 +7,5 @@ class Subsidiaryies(models.Model):
     address = models.CharField(max_length=150)
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
 
+    def __str__(self):
+        return 'Описание: ' + self.describe
